@@ -5,8 +5,9 @@ import org.springframework.util.Assert;
 import java.util.stream.Stream;
 
 /**
- * IValueEnum
+ * Interface for value enum.
  *
+ * @param <T> value type
  * @author RsosoR
  * @date 2021/9/2
  */

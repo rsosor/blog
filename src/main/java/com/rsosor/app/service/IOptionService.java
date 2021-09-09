@@ -1,9 +1,12 @@
 package com.rsosor.app.service;
 
+import com.rsosor.app.exception.MissingPropertyException;
 import com.rsosor.app.model.dto.OptionDTO;
 import com.rsosor.app.model.dto.OptionSimpleDTO;
 import com.rsosor.app.model.entity.Option;
 import com.rsosor.app.model.enums.IValueEnum;
+import com.rsosor.app.model.enums.PostPermalinkType;
+import com.rsosor.app.model.enums.SheetPermalinkType;
 import com.rsosor.app.model.params.OptionParam;
 import com.rsosor.app.model.params.OptionQuery;
 import com.rsosor.app.model.properties.IPropertyEnum;
@@ -318,19 +321,26 @@ public interface IOptionService extends ICrudService<Option, Integer> {
     /**
      * Get qi niu yun zone.
      *
+     * 域名管理
+     * 多區域上傳域名
      * @return qiniu zone
      */
+    /*
     @NonNull
     @Deprecated
     Zone getQnYunZone();
+    */
 
     /**
      * Get qiniu oss region.
      *
+     * 域名管理
      * @return qiniu region
      */
+    /*
     @NonNull
     Region getQiniuRegion();
+    */
 
     /**
      * Gets locale.
