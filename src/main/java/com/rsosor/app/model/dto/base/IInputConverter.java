@@ -50,6 +50,6 @@ public interface IInputConverter<D> {
      */
     @Nullable
     default ParameterizedType parameterizedType() {
-        return ReflectionUtils.getParameterizedType(InputConverter.class, this.getClass());
+        return ReflectionUtils.getParameterizedType(IInputConverter.class, this.getClass());
     }
 }

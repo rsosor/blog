@@ -19,7 +19,7 @@ import java.util.List;
  * @date 2021/9/9
  */
 @NoRepositoryBean
-public interface IBaseRepository<D, I> extends JpaRepository {
+public interface IBaseRepository<D, I> extends JpaRepository<D, I> {
 
     /**
      * Finds all domain by id list.

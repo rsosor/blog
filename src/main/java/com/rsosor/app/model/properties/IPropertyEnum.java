@@ -139,7 +139,7 @@ public interface IPropertyEnum extends IValueEnum<String> {
                 || type.isAssignableFrom(Double.class)
                 || type.isAssignableFrom(Float.class)
                 || type.isAssignableFrom(Enum.class)
-                || type.isAssignableFrom(ValueEnum.class);
+                || type.isAssignableFrom(IValueEnum.class);
     }
 
     static Map<String, IPropertyEnum> getValuePropertyEnumMap() {

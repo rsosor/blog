@@ -72,7 +72,7 @@ public class ValidationUtils {
      * @param objs iterable objects could be null
      * @param groups validation groups
      */
-    pubilc static void validate(@Nullable Iterable<?> objs, @Nullable Class<?>... groups) {
+    public static void validate(@Nullable Iterable<?> objs, @Nullable Class<?>... groups) {
         if (objs == null) {
             return;
         }

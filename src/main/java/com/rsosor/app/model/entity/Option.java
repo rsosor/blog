@@ -10,6 +10,12 @@ import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
 
+/**
+ * Setting entity.
+ *
+ * @author RsosoR
+ * @date 2021/9/12
+ */
 @Data
 @Entity
 @Table(name = "options")
