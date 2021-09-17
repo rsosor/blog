@@ -2,6 +2,7 @@ package com.rsosor.app.config;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.rsosor.app.cache.AbstractStringCacheStore;
+import com.rsosor.app.cache.InMemoryCacheStore;
 import com.rsosor.app.cache.LevelCacheStore;
 import com.rsosor.app.config.attributeconverter.AttributeConverterAutoGenerateConfiguration;
 import com.rsosor.app.config.properties.RsosoRProperties;
@@ -58,7 +59,7 @@ public class RsosoRConfiguration {
         RestTemplate httpsRestTemplate = builder.build();
         httpsRestTemplate.setRequestFactory(
                 new HttpComponentsClientHttpRequestFactory(HttpClientUtils.createHttpsClient(
-                        (int) RsosoRProperties.getDownloadTimeout().toMillis())));
+                        (int) rsosorProperties.getDownloadTimeout().toMillis())));
         return httpsRestTemplate;
     }
 
@@ -66,7 +67,7 @@ public class RsosoRConfiguration {
     @ConditionalOnMissingBean
     AbstractStringCacheStore stringCacheStore() {
         AbstractStringCacheStore stringCacheStore;
-        switch (RsosoRProperties.getCache()) {
+        switch (rsosorProperties.getCache()) {
             case "level":
                 stringCacheStore = new LevelCacheStore(this.rsosorProperties);
                 break;
@@ -76,6 +77,7 @@ public class RsosoRConfiguration {
                 stringCacheStore = new InMemoryCacheStore();
                 break;
         }
+        log.info("RsosoR cache store load impl: [{}]", stringCacheStore.getClass());
+        return stringCacheStore;
     }
-
 }

@@ -12,7 +12,7 @@ import java.util.Optional;
  * @author RsosoR
  * @date 2021/9/12
  */
-public interface IOptionRepository extends IBaseRepository<Option, Integer>, JpaSpecificationExecutor {
+public interface IOptionRepository extends IBaseRepository<Option, Integer>, JpaSpecificationExecutor<Option> {
 
     /**
      * Query option by key

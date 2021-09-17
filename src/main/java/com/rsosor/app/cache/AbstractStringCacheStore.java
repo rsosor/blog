@@ -2,6 +2,7 @@ package com.rsosor.app.cache;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.rsosor.app.utils.JsonUtils;
+import lombok.extern.slf4j.Slf4j;
 import org.hibernate.service.spi.ServiceException;
 import org.springframework.lang.NonNull;
 import org.springframework.util.Assert;
@@ -16,6 +17,7 @@ import java.util.concurrent.TimeUnit;
  * @author RsosoR
  * @date 2021/9/16
  */
+@Slf4j
 public abstract class AbstractStringCacheStore extends AbstractCacheStore<String, String> {
 
     protected Optional<CacheWrapper<String>> jsonToCacheWrapper(String json) {
