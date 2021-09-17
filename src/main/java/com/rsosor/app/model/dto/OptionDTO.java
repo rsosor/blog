@@ -18,6 +18,6 @@ public class OptionDTO implements IOutputConverter<OptionDTO, Option>{
 
     private String key;
 
-    private String value;
+    private Object value;
 
 }
