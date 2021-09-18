@@ -16,7 +16,7 @@ public interface IUserRepository extends IBaseRepository<User, Integer> {
     /**
      * Gets user by username.
      *
-     * @param username username msut not be blank
+     * @param username username must not be blank
      * @return an optional user
      */
     @NonNull
