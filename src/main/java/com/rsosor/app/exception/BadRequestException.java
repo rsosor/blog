@@ -3,7 +3,7 @@ package com.rsosor.app.exception;
 import org.springframework.http.HttpStatus;
 
 /**
- * BadRequestException
+ * Exception caused by request.
  *
  * @author RsosoR
  * @date 2021/9/3

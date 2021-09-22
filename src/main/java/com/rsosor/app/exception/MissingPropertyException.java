@@ -1,7 +1,7 @@
 package com.rsosor.app.exception;
 
 /**
- * MissingPropertyException
+ * Missing property value exception.
  *
  * @author RsosoR
  * @date 2021/9/3

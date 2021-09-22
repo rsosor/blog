@@ -3,7 +3,7 @@ package com.rsosor.app.exception;
 import org.springframework.http.HttpStatus;
 
 /**
- * NotFoundException
+ * Exception to entity not found.
  *
  * @author RsosoR
  * @date 2021/9/2
