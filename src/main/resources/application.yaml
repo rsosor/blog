@@ -16,6 +16,18 @@ spring:
   http:
     encoding:
       force: true
+  thymleaf:
+    encoding: UTF-8
+    # 熱部署靜態文件，能在瀏覽器中及時看到修改後的頁面效果
+    cache: false
+    # 不使用 HTML5 標準
+    mode: LEGACYHTML5
+    servlet:
+      content-type: text/html
+    # 設置 controller 映射路徑
+    prefix: classpath:/templates/
+    suffix: .html
+    check-template-location: true
 
 # 設定 Hibernate
   jpa:
