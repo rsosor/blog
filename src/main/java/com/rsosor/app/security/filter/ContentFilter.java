@@ -42,7 +42,7 @@ public class ContentFilter extends AbstractAuthenticationFilter {
                 "/css/**");
 
         // set failure handler
-        setFailureHandler((new ContentAuthenticationFailureHandler());
+        setFailureHandler(new ContentAuthenticationFailureHandler());
     }
 
     @Override
