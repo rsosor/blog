@@ -1,6 +1,6 @@
 package com.rsosor.app.security.context;
 
-import com.rsosor.app.security.authentication.Authentication;
+import com.rsosor.app.security.authentication.IAuthentication;
 import org.springframework.lang.Nullable;
 
 /**
@@ -17,7 +17,7 @@ public interface ISecurityContext {
      * @return the Authentication or null if authentication information is unavailable
      */
     @Nullable
-    Authentication getAuthentication();
+    IAuthentication getAuthentication();
 
     /**
      * Changes the currently authenticated principal, or removes the authentication information.
@@ -25,7 +25,7 @@ public interface ISecurityContext {
      * @param authentication the new authentication or null if no further authentication should
      *                       not be stored
      */
-    void setAuthentication(@Nullable Authentication authentication);
+    void setAuthentication(@Nullable IAuthentication authentication);
 
     /**
      * Check if the current context has authenticated or not.

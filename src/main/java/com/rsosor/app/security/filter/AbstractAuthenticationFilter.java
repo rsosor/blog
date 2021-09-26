@@ -9,9 +9,9 @@ import com.rsosor.app.exception.NotInstallException;
 import com.rsosor.app.model.enums.Mode;
 import com.rsosor.app.model.properties.PrimaryProperties;
 import com.rsosor.app.security.context.SecurityContextHolder;
-import com.rsosor.app.security.handler.AuthenticationFailureHandler;
+import com.rsosor.app.security.handler.IAuthenticationFailureHandler;
 import com.rsosor.app.security.handler.DefaultAuthenticationFailureHandler;
-import com.rsosor.app.security.service.impl.OneTimeTokenService;
+import com.rsosor.app.security.service.impl.IOneTimeTokenService;
 import com.rsosor.app.service.IOptionService;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
@@ -45,9 +45,9 @@ public abstract class AbstractAuthenticationFilter extends OncePerRequestFilter 
     protected final IOptionService optionService;
     protected final AbstractStringCacheStore cacheStore;
     private final UrlPathHelper urlPathHelper = new UrlPathHelper();
-    private final OneTimeTokenService oneTimeTokenService;
+    private final IOneTimeTokenService oneTimeTokenService;
 
-    private volatile AuthenticationFailureHandler failureHandler;
+    private volatile IAuthenticationFailureHandler failureHandler;
     /**
      * Exclude url patterns.
      */
@@ -58,7 +58,7 @@ public abstract class AbstractAuthenticationFilter extends OncePerRequestFilter 
     AbstractAuthenticationFilter(RsosoRProperties rsosorProperties,
                                  IOptionService optionService,
                                  AbstractStringCacheStore cacheStore,
-                                 OneTimeTokenService oneTimeTokenService) {
+                                 IOneTimeTokenService oneTimeTokenService) {
         this.rsosorProperties = rsosorProperties;
         this.optionService = optionService;
         this.cacheStore = cacheStore;
@@ -171,7 +171,7 @@ public abstract class AbstractAuthenticationFilter extends OncePerRequestFilter 
      * @return authentication failure handler
      */
     @NonNull
-    private AuthenticationFailureHandler getFailureHandler() {
+    private IAuthenticationFailureHandler getFailureHandler() {
         if (failureHandler == null) {
             synchronized (this) {
                 if (failureHandler == null) {
@@ -193,7 +193,7 @@ public abstract class AbstractAuthenticationFilter extends OncePerRequestFilter 
      * @param failureHandler authentication failure handler
      */
     public synchronized void setFailureHandler(
-            @NonNull AuthenticationFailureHandler failureHandler) {
+            @NonNull IAuthenticationFailureHandler failureHandler) {
         Assert.notNull(failureHandler, "Authentication failure handler must not be null");
 
         this.failureHandler = failureHandler;

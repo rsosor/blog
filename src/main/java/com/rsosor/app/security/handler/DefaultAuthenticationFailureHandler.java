@@ -20,7 +20,7 @@ import java.io.IOException;
  * @date 2021/9/26
  */
 @Slf4j
-public class DefaultAuthenticationFailureHandler implements AuthenticationFailureHandler {
+public class DefaultAuthenticationFailureHandler implements IAuthenticationFailureHandler {
 
     private boolean productionEnv = true;
 

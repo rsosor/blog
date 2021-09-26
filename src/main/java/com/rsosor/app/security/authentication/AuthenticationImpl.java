@@ -8,7 +8,7 @@ import com.rsosor.app.security.support.UserDetail;
  * @author RsosoR
  * @date 2021/9/25
  */
-public class AuthenticationImpl implements Authentication {
+public class AuthenticationImpl implements IAuthentication {
 
     private final UserDetail userDetail;
 

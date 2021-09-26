@@ -13,7 +13,7 @@ import java.io.IOException;
  * @author RsosoR
  * @date 2021/9/26
  */
-public class ContentAuthenticationFailureHandler implements AuthenticationFailureHandler {
+public class ContentAuthenticationFailureHandler implements IAuthenticationFailureHandler {
 
     @Override
     public void onFailure(HttpServletRequest request, HttpServletResponse response,

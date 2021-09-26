@@ -9,7 +9,7 @@ import org.springframework.lang.NonNull;
  * @author RsosoR
  * @date 2021/9/25
  */
-public interface Authentication {
+public interface IAuthentication {
 
     /**
      * Get user detail.

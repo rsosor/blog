@@ -9,7 +9,7 @@ import java.util.Optional;
  * @author RsosoR
  * @date 2021/9/25
  */
-public interface OneTimeTokenService {
+public interface IOneTimeTokenService {
 
     /**
      * Get the corresponding uri.

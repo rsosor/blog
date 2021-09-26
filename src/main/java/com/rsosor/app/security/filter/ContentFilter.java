@@ -3,7 +3,7 @@ package com.rsosor.app.security.filter;
 import com.rsosor.app.cache.AbstractStringCacheStore;
 import com.rsosor.app.config.properties.RsosoRProperties;
 import com.rsosor.app.security.handler.ContentAuthenticationFailureHandler;
-import com.rsosor.app.security.service.impl.OneTimeTokenService;
+import com.rsosor.app.security.service.impl.IOneTimeTokenService;
 import com.rsosor.app.service.IOptionService;
 import com.rsosor.app.utils.RsosoRUtils;
 import org.springframework.core.annotation.Order;
@@ -27,7 +27,7 @@ public class ContentFilter extends AbstractAuthenticationFilter {
     public ContentFilter(RsosoRProperties rsosorProperties,
                          IOptionService optionService,
                          AbstractStringCacheStore cacheStore,
-                         OneTimeTokenService oneTimeTokenService) {
+                         IOneTimeTokenService oneTimeTokenService) {
         super(rsosorProperties, optionService, cacheStore, oneTimeTokenService);
 
         addUrlPatterns("/**");

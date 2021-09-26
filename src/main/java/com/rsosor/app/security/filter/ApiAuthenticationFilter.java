@@ -8,7 +8,7 @@ import com.rsosor.app.exception.ForbiddenException;
 import com.rsosor.app.model.properties.ApiProperties;
 import com.rsosor.app.model.properties.CommentProperties;
 import com.rsosor.app.security.handler.DefaultAuthenticationFailureHandler;
-import com.rsosor.app.security.service.impl.OneTimeTokenService;
+import com.rsosor.app.security.service.impl.IOneTimeTokenService;
 import com.rsosor.app.service.IOptionService;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
@@ -40,7 +40,7 @@ public class ApiAuthenticationFilter extends AbstractAuthenticationFilter {
     public ApiAuthenticationFilter(RsosoRProperties rsosoRProperties,
                                    IOptionService optionService,
                                    AbstractStringCacheStore cacheStore,
-                                   OneTimeTokenService oneTimeTokenService,
+                                   IOneTimeTokenService oneTimeTokenService,
                                    ObjectMapper objectMapper) {
         super(rsosoRProperties, optionService, cacheStore, oneTimeTokenService);
         this.optionService = optionService;

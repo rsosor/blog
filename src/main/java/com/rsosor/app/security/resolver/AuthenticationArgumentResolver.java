@@ -2,7 +2,7 @@ package com.rsosor.app.security.resolver;
 
 import com.rsosor.app.exception.AuthenticationException;
 import com.rsosor.app.model.entity.User;
-import com.rsosor.app.security.authentication.Authentication;
+import com.rsosor.app.security.authentication.IAuthentication;
 import com.rsosor.app.security.context.SecurityContextHolder;
 import com.rsosor.app.security.support.UserDetail;
 import lombok.extern.slf4j.Slf4j;
@@ -30,7 +30,7 @@ public class AuthenticationArgumentResolver implements HandlerMethodArgumentReso
     @Override
     public boolean supportsParameter(MethodParameter parameter) {
         Class<?> parameterType = parameter.getParameterType();
-        return Authentication.class.isAssignableFrom(parameterType)
+        return IAuthentication.class.isAssignableFrom(parameterType)
                 || UserDetail.class.isAssignableFrom(parameterType)
                 || User.class.isAssignableFrom(parameterType);
     }
@@ -45,11 +45,11 @@ public class AuthenticationArgumentResolver implements HandlerMethodArgumentReso
 
         Class<?> parameterType = parameter.getParameterType();
 
-        Authentication authentication =
+        IAuthentication authentication =
                 Optional.ofNullable(SecurityContextHolder.getContext().getAuthentication())
                         .orElseThrow(() -> new AuthenticationException("You haven't signed in yet"));
 
-        if (Authentication.class.isAssignableFrom(parameterType)) {
+        if (IAuthentication.class.isAssignableFrom(parameterType)) {
             return authentication;
         } else if (UserDetail.class.isAssignableFrom(parameterType)) {
             return authentication.getDetail();

@@ -9,7 +9,7 @@ import com.rsosor.app.security.authentication.AuthenticationImpl;
 import com.rsosor.app.security.context.SecurityContextHolder;
 import com.rsosor.app.security.context.SecurityContextImpl;
 import com.rsosor.app.security.handler.DefaultAuthenticationFailureHandler;
-import com.rsosor.app.security.service.impl.OneTimeTokenService;
+import com.rsosor.app.security.service.impl.IOneTimeTokenService;
 import com.rsosor.app.security.support.UserDetail;
 import com.rsosor.app.security.util.SecurityUtils;
 import com.rsosor.app.service.IOptionService;
@@ -47,7 +47,7 @@ public class AdminAuthenticationFilter extends AbstractAuthenticationFilter {
                                      IUserService userService,
                                      RsosoRProperties rsosorProperties,
                                      IOptionService optionService,
-                                     OneTimeTokenService oneTimeTokenService,
+                                     IOneTimeTokenService oneTimeTokenService,
                                      ObjectMapper objectMapper) {
         super(rsosorProperties, optionService, cacheStore, oneTimeTokenService);
         this.userService = userService;

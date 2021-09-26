@@ -1,6 +1,6 @@
 package com.rsosor.app.security.context;
 
-import com.rsosor.app.security.authentication.Authentication;
+import com.rsosor.app.security.authentication.IAuthentication;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
@@ -18,15 +18,15 @@ import lombok.ToString;
 @AllArgsConstructor
 public class SecurityContextImpl implements ISecurityContext {
 
-    private Authentication authentication;
+    private IAuthentication authentication;
 
     @Override
-    public Authentication getAuthentication() {
+    public IAuthentication getAuthentication() {
         return authentication;
     }
 
     @Override
-    public void setAuthentication(Authentication authentication) {
+    public void setAuthentication(IAuthentication authentication) {
         this.authentication = authentication;
     }
 }

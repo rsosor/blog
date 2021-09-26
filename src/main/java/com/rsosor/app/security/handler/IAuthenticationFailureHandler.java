@@ -12,7 +12,7 @@ import java.io.IOException;
  * @author RsosoR
  * @date 2021/9/26
  */
-public interface AuthenticationFailureHandler {
+public interface IAuthenticationFailureHandler {
 
     /**
      * Calls when a user has been unsuccessfully authenticated.
