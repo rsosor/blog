@@ -53,7 +53,7 @@ public abstract class AbstractAuthenticationFilter extends OncePerRequestFilter 
      */
     private Set<String> excludeUrlPatterns = new HashSet<>(16);
 
-    private Set<String> urlPatterns = new LinkedList >();
+    private Set<String> urlPatterns = new LinkedHashSet<>();
 
     AbstractAuthenticationFilter(RsosoRProperties rsosorProperties,
                                  IOptionService optionService,
@@ -178,7 +178,7 @@ public abstract class AbstractAuthenticationFilter extends OncePerRequestFilter 
                     // Create default authentication failure handler
                     DefaultAuthenticationFailureHandler failureHandler =
                             new DefaultAuthenticationFailureHandler();
-                    failureHandler.setProductionEnv(RsosoRProperties.getMode().isProductionEnv());
+                    failureHandler.setProductionEnv(rsosorProperties.getMode().isProductionEnv());
 
                     this.failureHandler = failureHandler;
                 }
@@ -215,7 +215,7 @@ public abstract class AbstractAuthenticationFilter extends OncePerRequestFilter 
 
         try {
             // Check the one-time-token
-            if (isSufficationOneTimeToken(request)) {
+            if (isSufficientOneTimeToken(request)) {
                 filterChain.doFilter(request, response);
                 return;
             }

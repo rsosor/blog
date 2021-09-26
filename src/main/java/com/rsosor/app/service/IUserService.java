@@ -5,7 +5,6 @@ import com.rsosor.app.model.entity.User;
 import com.rsosor.app.service.base.ICrudService;
 import org.springframework.lang.NonNull;
 import org.springframework.lang.Nullable;
-
 import java.util.Optional;
 
 /**
@@ -15,6 +14,14 @@ import java.util.Optional;
  * @date 2021/9/23
  */
 public interface IUserService extends ICrudService<User, Integer> {
+
+    /**
+     * Gets current user.
+     *
+     * @return an optional user
+     */
+    @NonNull
+    Optional<User> getCurrentUser();
 
     /**
      * Gets user by username.

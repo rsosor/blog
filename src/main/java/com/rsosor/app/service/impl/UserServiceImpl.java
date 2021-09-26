@@ -13,8 +13,10 @@ import org.apache.commons.lang3.StringUtils;
 import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.stereotype.Service;
 import org.springframework.util.Assert;
+import org.springframework.util.CollectionUtils;
 
 import java.util.Date;
+import java.util.List;
 import java.util.Optional;
 import java.util.concurrent.TimeUnit;
 
@@ -36,6 +38,20 @@ public class UserServiceImpl extends AbstractCrudService<User, Integer> implemen
         super(userRepository);
         this.userRepository = userRepository;
         this.eventPublisher = eventPublisher;
+    }
+
+    @Override
+    public Optional<User> getCurrentUser() {
+        // Find all users
+        List<User> users = listAll();
+
+        if (CollectionUtils.isEmpty(users)) {
+            // Return empty user
+            return Optional.empty();
+        }
+
+        // Return the first user
+        return Optional.of(users.get(0));
     }
 
     @Override
