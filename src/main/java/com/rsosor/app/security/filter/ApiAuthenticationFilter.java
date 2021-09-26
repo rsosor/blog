@@ -8,7 +8,7 @@ import com.rsosor.app.exception.ForbiddenException;
 import com.rsosor.app.model.properties.ApiProperties;
 import com.rsosor.app.model.properties.CommentProperties;
 import com.rsosor.app.security.handler.DefaultAuthenticationFailureHandler;
-import com.rsosor.app.security.service.impl.IOneTimeTokenService;
+import com.rsosor.app.security.service.IOneTimeTokenService;
 import com.rsosor.app.service.IOptionService;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;

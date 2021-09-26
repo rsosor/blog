@@ -1,4 +1,4 @@
-package com.rsosor.app.security.service.impl;
+package com.rsosor.app.security.service;
 
 import org.springframework.lang.NonNull;
 import java.util.Optional;

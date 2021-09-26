@@ -9,7 +9,7 @@ import com.rsosor.app.security.authentication.AuthenticationImpl;
 import com.rsosor.app.security.context.SecurityContextHolder;
 import com.rsosor.app.security.context.SecurityContextImpl;
 import com.rsosor.app.security.handler.DefaultAuthenticationFailureHandler;
-import com.rsosor.app.security.service.impl.IOneTimeTokenService;
+import com.rsosor.app.security.service.IOneTimeTokenService;
 import com.rsosor.app.security.support.UserDetail;
 import com.rsosor.app.security.util.SecurityUtils;
 import com.rsosor.app.service.IOptionService;

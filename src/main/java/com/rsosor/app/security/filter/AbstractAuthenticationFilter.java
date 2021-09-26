@@ -11,7 +11,7 @@ import com.rsosor.app.model.properties.PrimaryProperties;
 import com.rsosor.app.security.context.SecurityContextHolder;
 import com.rsosor.app.security.handler.IAuthenticationFailureHandler;
 import com.rsosor.app.security.handler.DefaultAuthenticationFailureHandler;
-import com.rsosor.app.security.service.impl.IOneTimeTokenService;
+import com.rsosor.app.security.service.IOneTimeTokenService;
 import com.rsosor.app.service.IOptionService;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
