@@ -4,7 +4,7 @@ import org.springframework.lang.NonNull;
 import java.util.Optional;
 
 /**
- * OneTimeTokenService
+ * IOneTimeTokenService
  *
  * @author RsosoR
  * @date 2021/9/25

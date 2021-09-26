@@ -4,7 +4,7 @@ import com.rsosor.app.security.support.UserDetail;
 import org.springframework.lang.NonNull;
 
 /**
- * Authentication
+ * IAuthentication
  *
  * @author RsosoR
  * @date 2021/9/25

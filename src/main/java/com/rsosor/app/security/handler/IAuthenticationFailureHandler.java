@@ -7,7 +7,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 /**
- * AuthenticationFailureHandler
+ * IAuthenticationFailureHandler
  *
  * @author RsosoR
  * @date 2021/9/26

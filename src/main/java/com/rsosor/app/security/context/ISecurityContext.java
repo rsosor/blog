@@ -4,7 +4,7 @@ import com.rsosor.app.security.authentication.IAuthentication;
 import org.springframework.lang.Nullable;
 
 /**
- * SecurityContext
+ * ISecurityContext
  *
  * @author RsosoR
  * @date 2021/9/25
