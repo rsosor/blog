@@ -1,5 +1,6 @@
 package com.rsosor.app.model.dto;
 
+import com.rsosor.app.model.dto.base.IOutputConverter;
 import com.rsosor.app.model.entity.Option;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -14,7 +15,7 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class OptionDTO implements IOutputConverter<OptionDTO, Option>{
+public class OptionDTO implements IOutputConverter<OptionDTO, Option> {
 
     private String key;
 

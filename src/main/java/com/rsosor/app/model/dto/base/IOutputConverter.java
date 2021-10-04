@@ -1,8 +1,8 @@
-package com.rsosor.app.model.dto;
-
-import static com.rsosor.app.utils.BeanUtils.updateProperties;
+package com.rsosor.app.model.dto.base;
 
 import org.springframework.lang.NonNull;
+
+import static com.rsosor.app.utils.BeanUtils.updateProperties;
 
 /**
  * Converter interface for output DTO.
@@ -12,7 +12,7 @@ import org.springframework.lang.NonNull;
  * @param <DtoT> the implementation class type
  * @param <D> domain type
  * @author RsosoR
- * @date 2021/9/2
+ * @date 2021/10/4
  */
 public interface IOutputConverter<DtoT extends IOutputConverter<DtoT, D>, D> {
 
