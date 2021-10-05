@@ -41,13 +41,13 @@ public class RsosoRProperties {
     /**
      * RsosoR backup directory.(Not recommended to modify has this config);
      */
-    private String backDir =
+    private String backupDir =
             ensureSuffix(TEMP_DIR, FILE_SEPARATOR) + "rsosor-backup" + FILE_SEPARATOR;
 
     /**
      * RsosoR backup markdown directory.(Not recommended to modify this config);
      */
-    private String backupMarkdownDri =
+    private String backupMarkdownDir =
             ensureSuffix(TEMP_DIR, FILE_SEPARATOR) + "rsosor-backup-markdown" + FILE_SEPARATOR;
 
     /**
