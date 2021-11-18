@@ -51,7 +51,7 @@ public class BaseResponse<T> {
      * @param message result message
      * @return ok result with message and data
      */
-    @org.springframework.lang.NonNull
+    @NonNull
     public static <T> BaseResponse<T> ok(@Nullable String message, @Nullable T data) {
         return new BaseResponse<>(HttpStatus.OK.value(), message, data);
     }

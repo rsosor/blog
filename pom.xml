@@ -9,13 +9,14 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.rsosor</groupId>
-	<artifactId>app</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<artifactId>RsosoR</artifactId>
+	<version>1.0-SNAPSHOT</version>
 	<name>RsosoR</name>
 	<description>RsosoR project for Spring Boot</description>
 	<properties>
 		<java.version>11</java.version>
 	</properties>
+
 	<dependencies>
 		<dependency>
 			<groupId>org.iq80.leveldb</groupId>
